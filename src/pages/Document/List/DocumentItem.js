@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Paper, withStyles, Chip } from '@material-ui/core';
+import { Paper, withStyles, Chip } from '@material-ui/core';
 const styles = theme => ({
     root: {
         display: 'flex',
@@ -7,24 +7,18 @@ const styles = theme => ({
         justifyContent: 'center',
         flexDirection: 'row',
         marginTop: 15,
+        borderLeftColor: '#547EEB',
+        borderLeftWidth: 20,
+        borderLeftStyle: 'solid',
     },
-    verticalBadge: {
-        flex: 1,
-        width: 20,
-        minHeight: 80,
-        backgroundColor: '#547EEB'
-    },
+    
     infoContainer: {
-        flex: 25,
+        flexGrow: 1,
         display: 'flex',
         paddingLeft: 15,
         paddingTop: 15,
         flexDirection: 'row',
         justifyContent: 'space-between'
-    },
-    codeContainer: {
-        paddingRight: 15,
-        color: '#5A5959'
     },
     department: {
         color: '#5A5959',
@@ -38,6 +32,15 @@ const styles = theme => ({
     chip: {
         margin: theme.spacing.unit,
     },
+    codeContainer: {
+        paddingRight: 15,
+        color: '#5A5959',
+        
+    },
+    codeText:{
+        margin:0,
+        fontSize: 20
+    }
 })
 const DocumentItem = (props) => {
     const {
@@ -45,7 +48,7 @@ const DocumentItem = (props) => {
     } = props
     return (
         <Paper className={classes.root}>
-            <div className={classes.verticalBadge} > </div>
+            
             <div className={classes.infoContainer}>
                 <div>
                     <h4 className={classes.title}>{document.title} </h4>
