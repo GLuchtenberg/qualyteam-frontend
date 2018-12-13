@@ -1,22 +1,11 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import MaskedInput from 'react-text-mask';
+import { Route, Switch } from 'react-router-dom';
+
 import DocumentList from './Document/List/Index';
 import DocumentRegister from './Document/Register/RegisterForm';
-import { Grid, withStyles, Paper } from '@material-ui/core';
+import { Grid, withStyles } from '@material-ui/core';
 import Menu from '../components/Menu';
-function TextMaskCustom (props) {
-    const { inputRef, ...other } = props;
 
-    return (
-        <MaskedInput
-            {...other}
-            ref={inputRef}
-            placeholderChar={'\u2000'}
-            showMask
-        />
-    );
-}
 const styles = theme => ({
     root: {
         flex: 1,

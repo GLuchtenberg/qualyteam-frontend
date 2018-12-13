@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper, withStyles, Chip } from '@material-ui/core';
+import { withRouter, Link } from 'react-router-dom';
 const styles = theme => ({
     root: {
         display: 'flex',
@@ -11,7 +12,7 @@ const styles = theme => ({
         borderLeftWidth: 20,
         borderLeftStyle: 'solid',
     },
-    
+
     infoContainer: {
         flexGrow: 1,
         display: 'flex',
@@ -35,23 +36,23 @@ const styles = theme => ({
     codeContainer: {
         paddingRight: 15,
         color: '#5A5959',
-        
+
     },
-    codeText:{
-        margin:0,
+    codeText: {
+        margin: 0,
         fontSize: 20
     }
 })
 const DocumentItem = (props) => {
     const {
-        document, classes
+        document, classes, history
     } = props
     return (
         <Paper className={classes.root}>
-            
+
             <div className={classes.infoContainer}>
                 <div>
-                    <h4 className={classes.title}>{document.title} </h4>
+                    <Link to={`/document/${document.id}`}><h4 onClick={() => history.push(`/document/${document.id}`)} className={classes.title}>{document.title} </h4></Link>
                     <h5 className={classes.department}>{document.department} </h5>
                     {document.categories.length &&
                         document.categories.map(category => <Chip color="primary" className={classes.chip} label={category.name} />)
@@ -66,4 +67,4 @@ const DocumentItem = (props) => {
 }
 
 
-export default withStyles(styles)(DocumentItem)
+export default withRouter(withStyles(styles)(DocumentItem))

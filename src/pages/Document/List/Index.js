@@ -1,16 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import DocumentTable from './Table';
 import DocumentItem from './DocumentItem';
-import {
-    Paper,
-    withStyles
-} from '@material-ui/core';
-
-const styles = theme => ({
-    tableContainer: {
-        overflowX: 'auto'
-    }
-})
 
 class Index extends Component {
     constructor(props) {
@@ -47,7 +36,6 @@ class Index extends Component {
         const {
             documents
         } = this.state;
-        const { classes } = this.props;
         return (
             <Fragment>
                 {documents.length
@@ -57,4 +45,4 @@ class Index extends Component {
         );
     }
 }
-export default withStyles(styles)(Index)
+export default Index
